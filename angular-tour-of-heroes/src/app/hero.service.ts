@@ -18,8 +18,16 @@ export class HeroService {
     */
   }
   getHeroes(): Observable<Hero[]> { // Should be async, but in tutorial returns Observable
-    this.messageService.add( "HeroService: heroes fetched!" );
+    this.messageService.add( 'HeroService: heroes fetched!' );
     return of(HEROES);
+  }
+
+  getHero( id: number ): Observable<Hero> {
+    /*
+      ` `: it's like str().format() in Python
+    */
+    this.messageService.add( `HeroService: hero id=${id} fetched !` );
+    return of(HEROES.find( hero => hero.id === id ));
   }
 
 }

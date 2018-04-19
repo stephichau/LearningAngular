@@ -8,14 +8,16 @@ import { HeroService } from '../hero.service';
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit{
+export class HeroesComponent implements OnInit {
+  /* Code commented after __prunning__
   hero: Hero = {
     id: 1,
-    name: "Windstorm"
+    name: 'Windstorm'
   };
-  // heroes = HEROES;
-  heroes: Hero[];
+  heroes = HEROES;
   selectedHero: Hero; // declare type
+  */
+  heroes: Hero[];
   constructor(private heroService: HeroService) { // Add service with privateHeroService
   }
 
@@ -23,9 +25,9 @@ export class HeroesComponent implements OnInit{
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
+  /* onSelect(hero: Hero): void {
     this.selectedHero = hero; // assign hero to variable
-  }
+  } */
 
   getHeroes(): void {
     this.heroService.getHeroes()
